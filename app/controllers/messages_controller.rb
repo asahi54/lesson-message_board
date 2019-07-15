@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  before_action :set_messag, only: [:show, :edit, :upsate, :destroy]
+  before_action :set_message, only: [:show, :edit, :upsate, :destroy]
   
   def index
       @messages = Message.all
@@ -16,7 +16,7 @@ class MessagesController < ApplicationController
   end
 
   def create
-      @message = Message.new(message_params)
+    @message = Message.new(message_params)
 
     if @message.save
       flash[:success] = 'Message が正常に投稿されました'
@@ -52,7 +52,7 @@ class MessagesController < ApplicationController
     end
   end
 
-private
+  private
 
   # Strong Parameter
   def set_message
